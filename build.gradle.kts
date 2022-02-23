@@ -26,11 +26,8 @@ allprojects {
   publishing {
     repositories {
       maven {
-        setUrl("s3://m2.dv8tion.net/releases")
-        credentials(AwsCredentials::class) {
-          accessKey = project.findProperty("sedmelluqMavenS3AccessKey")?.toString()
-          secretKey = project.findProperty("sedmelluqMavenS3SecretKey")?.toString()
-        }
+        setUrl("https://repo.qpzm.win/repository/maven-releases")
+        credentials(PasswordCredentials::class)
       }
     }
   }
